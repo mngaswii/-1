@@ -1,0 +1,69 @@
+﻿@page
+@model сайт_курсач.Pages.Booking.CreateModel
+
+@{
+    ViewData["Title"] = "Онлайн запись";
+}
+
+<h2>Онлайн запись</h2>
+
+<form method="post">
+
+    <div class="mb-3">
+        <label>Имя</label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Фамилия</label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Телефон</label>
+        <input asp-for="PhoneNumber" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Услуга</label>
+        <select asp-for="ServiceId"
+                asp-items="Model.Services"
+                class="form-select">
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Мастер</label>
+        <select asp-for="MasterId"
+                asp-items="Model.Masters"
+                class="form-select">
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Дата и время</label>
+        <input asp-for="AppointmentDate"
+               type="datetime-local"
+               class="form-control" />
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+
+        Записаться
+
+    </button>
+
+</form>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success mt-3">
+        @TempData["Success"]
+    </div>
+}

@@ -1,20 +1,47 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using сайт_курсач.Data;
 using сайт_курсач.Models;
 
 namespace сайт_курсач.Pages.Clients
 {
     public class IndexModel : PageModel
-
     {
-        public List<Client> Clients { get; set; } = new();
-        public void OnGet()
+        private readonly ApplicationDbContext _context;
+
+        public IndexModel(ApplicationDbContext context)
         {
-            Clients = new List<Client>
+            _context = context;
+        }
+
+        public IList<Client> Clients { get; set; } = default!;
+
+        public async Task<IActionResult> OnGetAsync()
         {
-            new Client { Id = 1, FirstName = "Анна", Phone = "123456" },
-            new Client { Id = 2, FirstName = "Иван", Phone = "987654" }
-        };
+            // Проверка входа
+
+            if (HttpContext.Session.GetString("UserLogin") == null)
+            {
+                return RedirectToPage("/Account/Login");
+            }
+
+            // Получаем роль
+
+            string? role = HttpContext.Session.GetString("UserRole");
+
+            // Проверка роли
+
+            if (role != "Admin")
+            {
+                return RedirectToPage("/Index");
+            }
+
+            // Загрузка клиентов
+
+            Clients = await _context.Clients.ToListAsync();
+
+            return Page();
         }
     }
 }

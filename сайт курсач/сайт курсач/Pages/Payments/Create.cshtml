@@ -1,4 +1,56 @@
 ﻿@page
+
 @model сайт_курсач.Pages.Payments.CreateModel
+
 @{
+    ViewData["Title"] = "Добавить платеж";
 }
+
+<div class="form-container">
+
+    <h1 class="page-title mb-4">
+
+        Добавить платеж
+
+    </h1>
+
+    <form method="post">
+
+        <div class="mb-4">
+
+            <label asp-for="Payment.AppointmentId"
+                   class="form-label">
+
+                ID записи
+
+            </label>
+
+            <input asp-for="Payment.AppointmentId"
+                   class="form-control custom-input" />
+
+        </div>
+
+        <div class="mb-4">
+
+            <label asp-for="Payment.Amount"
+                   class="form-label">
+
+                Сумма
+
+            </label>
+
+            <input asp-for="Payment.Amount"
+                   class="form-control custom-input" />
+
+        </div>
+
+        <button type="submit"
+                class="btn custom-save-btn">
+
+            Сохранить
+
+        </button>
+
+    </form>
+
+</div>

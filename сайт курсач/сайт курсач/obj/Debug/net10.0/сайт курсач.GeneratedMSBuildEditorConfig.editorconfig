@@ -8,13 +8,14 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = сайт_курсач
 build_property.RootNamespace = сайт_курсач
 build_property.ProjectDir = D:\практика\курсовая\сайт курсач\сайт курсач\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 9.0
+build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\практика\курсовая\сайт курсач\сайт курсач
@@ -22,12 +23,20 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Appointments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwb2ludG1lbnRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Appointments/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwb2ludG1lbnRzXERldGFpbHMuY3NodG1s
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Appointments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwb2ludG1lbnRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Appointments/Edit.cshtml]
@@ -38,12 +47,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwb2ludG1lbnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Booking/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2luZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Clients/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Clients/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xEZXRhaWxzLmNzaHRtbA==
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Clients/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Clients/Edit.cshtml]
@@ -66,8 +79,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFzdGVyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Masters/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFzdGVyc1xEZXRhaWxzLmNzaHRtbA==
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Masters/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFzdGVyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Masters/Edit.cshtml]
@@ -82,8 +95,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Payments/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcRGV0YWlscy5jc2h0bWw=
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Payments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Payments/Edit.cshtml]
@@ -102,8 +115,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Reports/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xEZXRhaWxzLmNzaHRtbA==
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Reports/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Reports/Edit.cshtml]
@@ -118,8 +131,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Services/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNcRGV0YWlscy5jc2h0bWw=
+[D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Services/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/практика/курсовая/сайт курсач/сайт курсач/Pages/Services/Edit.cshtml]

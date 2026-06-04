@@ -1,4 +1,117 @@
 ﻿@page
+
 @model сайт_курсач.Pages.Reports.IndexModel
+
 @{
+    ViewData["Title"] = "Отчёты";
 }
+
+<h1 class="page-title mb-5">
+
+    Отчёты салона
+
+</h1>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+
+        <div class="report-card">
+
+            <h3>
+
+                Клиенты
+
+            </h3>
+
+            <div class="report-number">
+
+                @Model.ClientsCount
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="report-card">
+
+            <h3>
+
+                Мастера
+
+            </h3>
+
+            <div class="report-number">
+
+                @Model.MastersCount
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="report-card">
+
+            <h3>
+
+                Записи
+
+            </h3>
+
+            <div class="report-number">
+
+                @Model.AppointmentsCount
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="report-card">
+
+            <h3>
+
+                Платежи
+
+            </h3>
+
+            <div class="report-number">
+
+                @Model.PaymentsCount
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="report-card">
+
+            <h3>
+
+                Общий доход
+
+            </h3>
+
+            <div class="report-number">
+
+                @Model.TotalIncome ₽
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

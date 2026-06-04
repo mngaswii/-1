@@ -1,31 +1,51 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using сайт_курсач.Data;
 using сайт_курсач.Models;
 
 namespace сайт_курсач.Pages.Clients
 {
     public class EditModel : PageModel
     {
+        private readonly ApplicationDbContext _context;
+
+        public EditModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         [BindProperty]
         public Client Client { get; set; }
 
-        public void OnGet(int id)
+        public IActionResult OnGet(int? id)
         {
-            // временные данные
-            Client = new Client
+            if (id == null)
             {
-                Id = id,
-                FirstName = "Анна",
-                Phone = "123456"
-            };
+                return NotFound();
+            }
+
+            Client = _context.Clients.Find(id);
+
+            if (Client == null)
+            {
+                return NotFound();
+            }
+
+            return Page();
         }
 
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
+            {
                 return Page();
+            }
 
-            return RedirectToPage("Index");
+            _context.Clients.Update(Client);
+
+            _context.SaveChanges();
+
+            return RedirectToPage("./Index");
         }
     }
 }

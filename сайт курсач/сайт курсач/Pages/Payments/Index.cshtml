@@ -1,4 +1,69 @@
 ﻿@page
+
 @model сайт_курсач.Pages.Payments.IndexModel
+
 @{
+    ViewData["Title"] = "Платежи";
 }
+
+<h1 class="page-title mb-4">
+
+    Платежи
+
+</h1>
+
+<a asp-page="Create"
+   class="btn custom-add-btn mb-4">
+
+    Добавить платеж
+
+</a>
+
+<table class="table custom-table">
+
+    <thead>
+
+        <tr>
+
+            <th>ID записи</th>
+
+            <th>Сумма</th>
+
+            <th>Дата</th>
+
+            <th></th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model.Payments)
+        {
+            <tr>
+
+                <td>@item.AppointmentId</td>
+
+                <td>@item.Amount ₽</td>
+
+                <td>@item.PaymentDate.ToString("dd.MM.yyyy")</td>
+
+                <td>
+
+                    <a asp-page="Delete"
+                       asp-route-id="@item.Id"
+                       class="btn action-delete">
+
+                        Удалить
+
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

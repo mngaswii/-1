@@ -1,0 +1,37 @@
+﻿@page "{id:int}"
+
+@model сайт_курсач.Pages.Payments.DeleteModel
+
+@{
+    ViewData["Title"] = "Удаление платежа";
+}
+
+<div class="form-container text-center">
+
+    <h1 class="page-title mb-4">
+
+        Удаление платежа
+
+    </h1>
+
+    <h4 class="mb-4">
+
+        Удалить платеж?
+
+    </h4>
+
+    <form method="post">
+
+        <input type="hidden"
+               asp-for="Payment.Id" />
+
+        <button type="submit"
+                class="btn action-delete">
+
+            Удалить
+
+        </button>
+
+    </form>
+
+</div>
