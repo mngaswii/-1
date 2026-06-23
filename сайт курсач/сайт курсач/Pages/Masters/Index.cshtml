@@ -1,5 +1,6 @@
 ﻿@page
 @model сайт_курсач.Pages.Masters.IndexModel
+@using Microsoft.AspNetCore.Http
 
 @{
     ViewData["Title"] = "Мастера";
@@ -8,15 +9,18 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
 
     <h1 class="page-title">
-        Мастера
+        Наши мастера
     </h1>
 
-    <a asp-page="Create"
-       class="btn custom-add-btn">
+    @if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        <a asp-page="Create"
+           class="btn custom-add-btn">
 
-        + Добавить мастера
+            + Добавить мастера
 
-    </a>
+        </a>
+    }
 
 </div>
 
@@ -28,17 +32,18 @@
 
             <tr>
 
-                <th>
-                    Имя
-                </th>
+                <th>Имя</th>
 
-                <th>
-                    Специализация
-                </th>
+                <th>Фамилия</th>
 
-                <th>
-                    Действия
-                </th>
+                <th>Телефон</th>
+
+                <th>Специализация</th>
+
+                @if (HttpContext.Session.GetString("UserRole") == "Admin")
+                {
+                    <th>Действия</th>
+                }
 
             </tr>
 
@@ -50,33 +55,36 @@
             {
                 <tr>
 
-                    <td>
-                        @item.FirstName
-                    </td>
+                    <td>@item.FirstName</td>
 
-                    <td>
-                        @item.Specialization
-                    </td>
+                    <td>@item.LastName</td>
 
-                    <td>
+                    <td>@item.PhoneNumber</td>
 
-                        <a asp-page="./Edit"
-                           asp-route-id="@item.Id"
-                           class="btn btn-sm action-edit">
+                    <td>@item.Specialization</td>
 
-                            Изменить
+                    @if (HttpContext.Session.GetString("UserRole") == "Admin")
+                    {
+                        <td>
 
-                        </a>
+                            <a asp-page="./Edit"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm action-edit">
 
-                        <a asp-page="./Delete"
-                           asp-route-id="@item.Id"
-                           class="btn btn-sm action-delete">
+                                Изменить
 
-                            Удалить
+                            </a>
 
-                        </a>
+                            <a asp-page="./Delete"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm action-delete">
 
-                    </td>
+                                Удалить
+
+                            </a>
+
+                        </td>
+                    }
 
                 </tr>
             }

@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using сайт_курсач.Data;
@@ -17,27 +16,9 @@ namespace сайт_курсач.Pages.Masters
 
         public IList<Master> Masters { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync()
+        public async Task OnGetAsync()
         {
-            // Проверка входа
-
-            if (HttpContext.Session.GetString("UserLogin") == null)
-            {
-                return RedirectToPage("/Account/Login");
-            }
-
-            // Admin и Master
-
-            string? role = HttpContext.Session.GetString("UserRole");
-
-            if (role != "Admin" && role != "Master")
-            {
-                return RedirectToPage("/Index");
-            }
-
             Masters = await _context.Masters.ToListAsync();
-
-            return Page();
         }
     }
 }

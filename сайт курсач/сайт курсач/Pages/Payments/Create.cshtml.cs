@@ -17,15 +17,30 @@ namespace сайт_курсач.Pages.Payments
         [BindProperty]
         public Payment Payment { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (HttpContext.Session.GetString("UserRole") != "Admin")
+            {
+                return RedirectToPage("/Index");
+            }
 
+            return Page();
         }
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            if (HttpContext.Session.GetString("UserRole") != "Admin")
             {
+                return RedirectToPage("/Index");
+            }
+
+            var appointment = _context.Appointments
+                .FirstOrDefault(a => a.Id == Payment.AppointmentId);
+
+            if (appointment == null)
+            {
+                ModelState.AddModelError("", "Запись с таким ID не найдена.");
+
                 return Page();
             }
 

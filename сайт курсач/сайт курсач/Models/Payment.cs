@@ -13,6 +13,6 @@ namespace сайт_курсач.Models
 
         public int AppointmentId { get; set; }
 
-        public Appointment Appointment { get; set; }
+        public Appointment? Appointment { get; set; }
     }
 }

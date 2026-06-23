@@ -49,6 +49,20 @@ namespace сайт_курсач.Pages.Booking
         {
             LoadLists();
 
+            // Проверка занятости мастера
+            var existingAppointment = _context.Appointments
+                .FirstOrDefault(a =>
+                    a.MasterId == MasterId &&
+                    a.AppointmentDate == AppointmentDate);
+
+            if (existingAppointment != null)
+            {
+                TempData["Error"] =
+                    "На это время мастер уже занят. Выберите другое время.";
+
+                return Page();
+            }
+
             var client = new Client
             {
                 FirstName = FirstName,
@@ -72,10 +86,12 @@ namespace сайт_курсач.Pages.Booking
             _context.Appointments.Add(appointment);
             _context.SaveChanges();
 
-            TempData["Success"] =
-                "Вы успешно записались на процедуру!";
-
-            return RedirectToPage();
+            return RedirectToPage(
+                "/Payments/FakePayment",
+                new
+                {
+                    appointmentId = appointment.Id
+                });
         }
 
         private void LoadLists()
@@ -86,7 +102,7 @@ namespace сайт_курсач.Pages.Booking
                 "Name");
 
             Masters = new SelectList(
-                _context.Masters.ToList(),
+                _context.Masters.ToList(), //
                 "Id",
                 "FirstName");
         }

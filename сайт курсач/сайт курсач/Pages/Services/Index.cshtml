@@ -1,5 +1,6 @@
 ﻿@page
 @model сайт_курсач.Pages.Services.IndexModel
+@using Microsoft.AspNetCore.Http
 
 @{
     ViewData["Title"] = "Услуги";
@@ -11,12 +12,15 @@
         Услуги
     </h1>
 
-    <a asp-page="Create"
-       class="btn custom-add-btn">
+    @if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        <a asp-page="Create"
+           class="btn custom-add-btn">
 
-        + Добавить услугу
+            + Добавить услугу
 
-    </a>
+        </a>
+    }
 
 </div>
 
@@ -37,8 +41,15 @@
                 </th>
 
                 <th>
-                    Действия
+                    Длительность
                 </th>
+
+                @if (HttpContext.Session.GetString("UserRole") == "Admin")
+                {
+                    <th>
+                        Действия
+                    </th>
+                }
 
             </tr>
 
@@ -59,24 +70,31 @@
                     </td>
 
                     <td>
-
-                        <a asp-page="./Edit"
-                           asp-route-id="@item.Id"
-                           class="btn btn-sm action-edit">
-
-                            Изменить
-
-                        </a>
-
-                        <a asp-page="./Delete"
-                           asp-route-id="@item.Id"
-                           class="btn btn-sm action-delete">
-
-                            Удалить
-
-                        </a>
-
+                        @item.DurationMinutes мин.
                     </td>
+
+                    @if (HttpContext.Session.GetString("UserRole") == "Admin")
+                    {
+                        <td>
+
+                            <a asp-page="./Edit"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm action-edit">
+
+                                Изменить
+
+                            </a>
+
+                            <a asp-page="./Delete"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm action-delete">
+
+                                Удалить
+
+                            </a>
+
+                        </td>
+                    }
 
                 </tr>
             }

@@ -28,25 +28,17 @@
 
             <tr>
 
-                <th>
-                    Клиент
-                </th>
+                <th>ID</th>
 
-                <th>
-                    Мастер
-                </th>
+                <th>Клиент</th>
 
-                <th>
-                    Услуга
-                </th>
+                <th>Мастер</th>
 
-                <th>
-                    Дата
-                </th>
+                <th>Услуга</th>
 
-                <th>
-                    Действия
-                </th>
+                <th>Дата</th>
+
+                <th>Действия</th>
 
             </tr>
 
@@ -59,11 +51,15 @@
                 <tr>
 
                     <td>
-                        @item.Client.FirstName
+                        @item.Id
                     </td>
 
                     <td>
-                        @item.Master.FirstName
+                        @item.Client.FirstName @item.Client.LastName
+                    </td>
+
+                    <td>
+                        @item.Master.FirstName @item.Master.LastName
                     </td>
 
                     <td>
@@ -71,7 +67,7 @@
                     </td>
 
                     <td>
-                        @item.AppointmentDate
+                        @item.AppointmentDate.ToString("dd.MM.yyyy HH:mm")
                     </td>
 
                     <td>
@@ -89,6 +85,14 @@
                            class="btn btn-sm action-delete">
 
                             Удалить
+
+                        </a>
+
+                        <a asp-page="/Payments/FakePayment"
+                           asp-route-appointmentId="@item.Id"
+                           class="btn btn-sm btn-success">
+
+                            Оплатить
 
                         </a>
 
